@@ -1,0 +1,456 @@
+/* Estilos personalizados para o site de monitoramento - Modo Dark Limpo */
+
+:root {
+    --primary-color: #3b82f6;
+    --secondary-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --bg-color: #f3f4f6;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition-speed: 0.3s;
+    
+    /* Variáveis para modo claro */
+    --bg-primary: #f3f4f6;
+    --bg-secondary: #ffffff;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --border-color: #e5e7eb;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --card-bg: #ffffff;
+    --header-bg: #2563eb;
+    --header-text: #ffffff;
+}
+
+/* Variáveis para modo dark - cores fixas e profissionais */
+.dark {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --card-bg: #1e293b;
+    --header-bg: #1d4ed8;
+    --header-text: #f1f5f9;
+}
+
+/* Configuração base com transições suaves */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    min-height: 100vh;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+/* Animações suaves */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Cards com fundo branco fixo no modo claro */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all var(--transition-speed) ease;
+    animation: fadeInUp 0.6s ease-out;
+    border: 1px solid #e5e7eb;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px var(--shadow-color), 0 8px 10px -6px var(--shadow-color);
+}
+
+/* Cards no modo dark - cores escuras fixas */
+.dark .card {
+    background: #1e293b;
+    color: #f1f5f9;
+    border-color: #334155;
+}
+
+.dark .temperature-card,
+.dark .humidity-card,
+.dark .bg-white {
+    background: #1e293b !important;
+    border: 1px solid #334155;
+}
+
+/* Header com gradiente */
+header {
+    background: linear-gradient(135deg, var(--header-bg) 0%, #3b82f6 100%);
+    color: var(--header-text);
+}
+
+/* Indicadores coloridos dinamicamente - apenas bordas ou badges */
+.indicator-cold {
+    border-left: 4px solid #3b82f6;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.05) 0%, transparent 100%);
+}
+
+.indicator-normal {
+    border-left: 4px solid #10b981;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+}
+
+.indicator-warm {
+    border-left: 4px solid #f59e0b;
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.05) 0%, transparent 100%);
+}
+
+.indicator-hot {
+    border-left: 4px solid #ef4444;
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.05) 0%, transparent 100%);
+}
+
+
+/* ====== MODO DARK ====== */
+
+.dark .indicator-cold {
+    border-left: 4px solid #60a5fa; /* azul mais claro */
+    background: linear-gradient(
+        90deg,
+        rgba(96, 165, 250, 0.12) 0%,
+        transparent 100%
+    );
+}
+
+.dark .indicator-normal {
+    border-left: 4px solid #34d399; /* verde claro vibrante */
+    background: linear-gradient(
+        90deg,
+        rgba(52, 211, 153, 0.12) 0%,
+        transparent 100%
+    );
+}
+
+.dark .indicator-warm {
+    border-left: 4px solid #fbbf24; /* amarelo mais vivo */
+    background: linear-gradient(
+        90deg,
+        rgba(251, 191, 36, 0.12) 0%,
+        transparent 100%
+    );
+}
+
+.dark .indicator-hot {
+    border-left: 4px solid #f87171; /* vermelho claro */
+    background: linear-gradient(
+        90deg,
+        rgba(248, 113, 113, 0.12) 0%,
+        transparent 100%
+    );
+}
+
+
+
+/* Indicadores para umidade */
+.indicator-low {
+    border-left: 4px solid #f59e0b;
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.05) 0%, transparent 100%);
+}
+
+.indicator-high {
+    border-left: 4px solid #3b82f6;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.05) 0%, transparent 100%);
+}
+
+.dark .indicator-high {
+    border-left: 4px solid #4b8df8; /* azul mais claro */
+    background: linear-gradient(
+        90deg,
+        rgba(96, 165, 250, 0.12) 0%,
+        transparent 100%
+    );
+}
+
+.dark .indicator-low {
+    border-left: 4px solid #fab134; /* Vermelho mais claro */
+    background: rgba(248, 113, 113, 0.15);
+}
+
+
+/* Valores das métricas - cores fixas e melhor contraste */
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 8px 0;
+    transition: all var(--transition-speed) ease;
+}
+
+.dark .metric-value-color {
+    color: #f1f5f9;
+}
+
+.dark .metric-value-color {
+    color: #f8fafc;
+}
+
+/* Status de conexão */
+.connection-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+}
+
+.status-connected {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.dark .status-connected {
+    background-color: #064e3b;
+    color: #a7f3d0;
+}
+
+.status-disconnected {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.dark .status-disconnected {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+}
+
+/* Botão de alternância de tema */
+#themeToggle {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all var(--transition-speed) ease;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#themeToggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.dark #themeToggle {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animação do ícone do tema */
+#themeToggle i {
+    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+#themeToggle:hover i {
+    transform: scale(1.2);
+}
+
+.dark #themeToggle i {
+    color: #fbbf24;
+}
+
+/* Botão de atualização */
+.refresh-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.refresh-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.refresh-btn:active {
+    transform: translateY(0);
+}
+
+.refresh-btn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.refresh-btn.loading i {
+    animation: spin 1s linear infinite;
+}
+
+/* Gráficos */
+.chart-container {
+    position: relative;
+    height: 300px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 16px;
+    transition: all var(--transition-speed) ease;
+    border: 1px solid var(--border-color);
+}
+
+/* Tabela */
+.table-container {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+    overflow: hidden;
+    transition: all var(--transition-speed) ease;
+    border: 1px solid var(--border-color);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    background-color: #f9fafb;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all var(--transition-speed) ease;
+}
+
+.dark .data-table th {
+    background-color: #334155;
+    color: #cbd5e1;
+}
+
+.data-table td {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    transition: all var(--transition-speed) ease;
+}
+
+.data-table-hover tbody tr:hover {
+    background-color: #f9fafb;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.dark .data-table-hover tbody tr:hover {
+    background-color: #babdc2;
+}
+
+/* Animações de carregamento */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, transparent 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+.dark .loading-skeleton {
+    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    .metric-value {
+        font-size: 2rem;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+    
+    .data-table {
+        font-size: 0.75rem;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .metric-value {
+        font-size: 1.75rem;
+    }
+}
+
+/* Utilitários */
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-custom {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.dark .shadow-custom {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
