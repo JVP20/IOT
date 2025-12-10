@@ -193,7 +193,7 @@ class EnvironmentalMonitor {
         
         tempElement.textContent = `${this.data.temperature}°C`;
         humidityElement.textContent = `${this.data.humidity}%`;
-        smokeElement.textContent = `${this.data.smoke} ppm`;
+        smokeElement.textContent = `${this.data.smoke} %`;
         
         // Aplicar cores dinâmicas
         this.applyDynamicColors();
