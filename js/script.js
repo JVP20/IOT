@@ -666,9 +666,9 @@ class EnvironmentalMonitor {
             } catch (error) {
                 console.error("Erro ao obter dados da API:", error);
             }
-        }, 500000); // Atualiza a cada 15 segundos
+        }, 120000); // Atualiza a cada 2 minutos
 
-        console.log('Atualizações iniciadas com intervalo de 15 segundos');
+        console.log('Atualizações iniciadas com intervalo de 2 minutos');
     }
 
     startRealTimeUpdates2() {
