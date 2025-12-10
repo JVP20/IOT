@@ -352,7 +352,7 @@ class EnvironmentalMonitor {
                     tension: 0.4,
                     fill: true
                 }, {
-                    label: 'Fumaça (ppm)',
+                    label: 'Fumaça (%)',
                     data: smokeData,
                     borderColor: '#6b7280',
                     backgroundColor: 'rgba(107, 114, 128, 0.1)',
@@ -549,7 +549,7 @@ class EnvironmentalMonitor {
                         ${record.humidity}%
                     </td>
                     <td class="px-4 py-3 text-sm text-gray-900 dark:text-gray-900 font-medium metric-value-color">
-                        ${record.smoke} ppm
+                        ${record.smoke} %
                     </td>
                     <td class="px-4 py-3">
                         <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${status.class}">
