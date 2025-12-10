@@ -290,11 +290,11 @@ class EnvironmentalMonitor {
         if (smoke > 50) {
             smokeElement.textContent = 'Alta concentração';
             smokeElement.className = 'text-sm text-red-600 dark:text-red-400 mt-1';
-        } else if (smoke > 20) {
+        } else if (smoke > 10) {
             smokeElement.textContent = 'Moderada';
             smokeElement.className = 'text-sm text-yellow-600 dark:text-yellow-400 mt-1';
         } else {
-            smokeElement.textContent = 'Sem detecção';
+            smokeElement.textContent = 'Pequenas variações';
             smokeElement.className = 'text-sm text-green-600 dark:text-green-400 mt-1';
         }
     }
