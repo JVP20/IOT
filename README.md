@@ -110,7 +110,7 @@ if (temp > 30) { // Alterar para outro valor }
 ### Unidades Padrão
 - **Temperatura**: Celsius (°C)
 - **Umidade**: Porcentagem (%)
-- **Fumaça**: Partes por milhão (ppm)
+- **Fumaça**: Porcentagem (%)
 
 ### Escala de Status
 - **Temperatura**: 
@@ -122,9 +122,9 @@ if (temp > 30) { // Alterar para outro valor }
   - Ideal: 30-70%
   - Alta: > 70%
 - **Fumaça**:
-  - Sem detecção: 0-20 ppm
-  - Moderada: 20-50 ppm
-  - Alta concentração: > 50 ppm
+  - Pequenas Variações: 1-10%
+  - Moderada: 11-50%
+  - Alta concentração: > 51-100%
 
 ## 🌐 Compatibilidade
 
